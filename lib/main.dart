@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 void main()=>runApp(LibraryApp());
 class LibraryApp extends StatelessWidget {
+  TextEditingController getBookName=TextEditingController();
+  TextEditingController getBookAuthor=TextEditingController();
+  TextEditingController getDistributor=TextEditingController();
+  TextEditingController getBookPrice=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +19,7 @@ class LibraryApp extends StatelessWidget {
           child: Column(mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              TextField(
+              TextField(controller: getBookName,
                 decoration: InputDecoration(
                   hintText: "Book Name",
                   border: OutlineInputBorder(
@@ -24,25 +28,33 @@ class LibraryApp extends StatelessWidget {
                 ),
               ),
 
-              TextField(
+              TextField(controller: getBookAuthor,
                 decoration: InputDecoration(
                   hintText: "Book Author",
                   border: OutlineInputBorder()
                 ),
               ),
-              TextField(
+              TextField(controller: getDistributor,
                 decoration: InputDecoration(
                   hintText: "Distributor",
                   border: OutlineInputBorder()
                 ),
               ),
-              TextField(
+              TextField(controller: getBookPrice,
                 decoration: InputDecoration(
                   hintText: "Price",
                   border: OutlineInputBorder()
                 ),
               ),
               RaisedButton(onPressed: (){
+                String getbookname=getBookName.text;
+                String getauthor=getBookAuthor.text;
+                String getdistributor=getDistributor.text;
+                String getprice=getBookPrice.text;
+                print(getbookname);
+                print(getauthor);
+                print(getdistributor);
+                print(getprice);
                Colors.accents; 
               },child: Text("SUBMIT"),)
             ],
